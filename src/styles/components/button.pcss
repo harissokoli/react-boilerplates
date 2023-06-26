@@ -1,0 +1,68 @@
+@layer base {
+	.button {
+		@apply rounded-[10px];
+		@apply outline-none;
+		@apply relative;
+	}
+}
+
+@layer utilities {
+}
+
+button {
+	@apply button;
+}
+
+@layer components {
+	.btn-primary {
+		@apply bg-primary;
+		@apply text-dark;
+	}
+
+	.btn-secondary {
+		@apply bg-secondary;
+		@apply text-light;
+	}
+
+	.btn-light {
+		@apply bg-light;
+		@apply text-dark;
+	}
+
+	.btn-blue {
+		@apply bg-blue;
+		@apply text-light;
+	}
+
+	.btn-grey {
+		@apply bg-grey;
+		@apply text-dark;
+	}
+
+	.btn-dark-grey {
+		@apply bg-grey-darker;
+		@apply text-light;
+	}
+
+	.btn-small {
+		@apply px-2 py-3;
+	}
+
+	.btn-medium {
+		@apply p-[10px];
+	}
+
+	.btn-normal {
+		@apply px-5 py-[10px];
+	}
+
+	.btn-large {
+		@apply py-4 px-[156px];
+	}
+
+	.btn-popover {
+		@apply w-[42px] h-[36px];
+		@apply flex justify-center items-center;
+		@apply py-3 px-2;
+	}
+}

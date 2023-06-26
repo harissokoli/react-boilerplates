@@ -1,0 +1,87 @@
+@layer base {
+	.sidebar {
+		@apply min-h-screen w-[20%] md:w-[30%];
+		@apply pt-[10px];
+		@apply pb-[100px];
+		@apply mt-[41px];
+		@apply mb-[235px];
+		@apply bg-grey-darker;
+		@apply flex;
+		@apply flex-col;
+		@apply gap-[10px];
+		@apply rounded-l-[10px];
+		@apply flex-1;
+		@apply sm:w-[calc(100%-40px)] sm:max-w-none;
+		@apply sm:flex-row;
+		@apply sm:mt-2;
+		@apply sm:ml-5;
+		@apply sm:mb-0;
+		@apply sm:p-0;
+		@apply sm:pt-3;
+		@apply sm:pb-3;
+		@apply sm:min-h-max;
+		@apply sm:bg-transparent;
+		@apply sm:overflow-x-auto sm:overflow-y-hidden;
+		@apply sm:gap-0;
+	}
+
+	.sidebar .navlink {
+		@apply bg-grey-darker;
+	}
+
+	.navlink.activeSidebarLink {
+		@apply flex w-[calc(100%+30px)] pl-[30px] py-[18px] bg-white rounded-l-[10px] translate-x-[-15px] shadow-md;
+		@apply sm:-translate-y-[10px] sm:translate-x-0;
+		@apply sm:w-full;
+		@apply sm:!bg-secondary;
+		@apply sm:after:content-[""] sm:after:bg-white sm:after:w-20 sm:after:h-5 sm:after:absolute sm:after:rounded-t-[10px] sm:after:z-50;
+		@apply sm:after:-bottom-[30px];
+	}
+}
+
+@layer components {
+	.sidebar .navlink {
+		@apply sm:min-w-[90px] sm:min-h-[90px];
+		@apply flex pl-[30px] py-[18px];
+		@apply sm:ml-4;
+		@apply sm:flex-col;
+		@apply sm:items-center;
+		@apply sm:justify-center;
+		@apply sm:first:ml-0;
+		@apply sm:rounded-[10px];
+		@apply sm:p-0;
+		@apply sm:aspect-square;
+		@apply sm:w-[150px];
+		@apply sm:transition-all duration-200;
+	}
+
+	.sidebar .navlink__icon {
+		@apply mr-[22px];
+		@apply sm:mr-0;
+		@apply sm:mb-2;
+		@apply sm:w-8;
+		@apply sm:scale-110;
+		@apply sm:flex;
+		@apply sm:justify-center;
+	}
+
+	.sidebar .navlink__text {
+		@apply text-white font-bold;
+		@apply sm:text-[12px] sm:font-medium;
+	}
+
+	.activeSidebarLink .navlink {
+		@apply flex w-full pl-[30px] py-[18px];
+		@apply sm:translate-y-2;
+	}
+
+	.activeSidebarLink .navlink__icon {
+	}
+
+	.activeSidebarLink .navlink__text {
+		@apply text-dark font-bold;
+		@apply sm:mr-0 sm:translate-x-0;
+		@apply sm:text-white;
+		@apply xs:text-[12px] xs:font-medium;
+	}
+}
