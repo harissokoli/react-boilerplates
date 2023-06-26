@@ -15,7 +15,7 @@
 - Vite
 - React
 - TypeScript
-- Redux-Toolkit
+- Context API
 - Tailwind CSS
 - Axios
 - i18-next
