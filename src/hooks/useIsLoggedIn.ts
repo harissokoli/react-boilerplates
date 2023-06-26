@@ -1,20 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { useAppSelector } from './useAppSelector';
+import { useBasicContext } from 'store/useBasicContext';
 
 const useIsLoggedIn = () => {
 	const location = useLocation();
-	const user = useAppSelector((state) => state.user);
+	const { isLoggedIn: loggedIn } = useBasicContext();
 
-	const [isLoggedIn, setIsLoggedIn] = useState(user.isLoggedIn);
+	const [isLoggedIn, setIsLoggedIn] = useState(loggedIn);
 
-	useEffect(() => setIsLoggedIn((loggedIn) => loggedIn), [location]);
-	useEffect(() => {
-		if (!user) {
-			setIsLoggedIn(false);
-		}
-	}, [user]);
+	useEffect(() => setIsLoggedIn((loggedIn: any) => loggedIn), [location]);
 
 	return isLoggedIn;
 };
