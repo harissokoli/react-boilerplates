@@ -1,5 +1,5 @@
 {
-	"name": "react-context-template",
+	"name": "react-zustand-template",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -27,7 +27,8 @@
 		"react-i18next": "^12.1.4",
 		"react-modal": "^3.16.1",
 		"react-router-dom": "^6.7.0",
-		"yup": "^0.32.11"
+		"yup": "^0.32.11",
+		"zustand": "^4.3.8"
 	},
 	"devDependencies": {
 		"@trivago/prettier-plugin-sort-imports": "^4.1.1",

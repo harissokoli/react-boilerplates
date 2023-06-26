@@ -5,7 +5,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import * as Yup from 'yup';
 
-import { useBasicContext } from 'store/useBasicContext';
+import { useBasicStore } from 'store/useBasicContext';
 
 import { TextField } from 'components/InputFields/TextField';
 
@@ -15,9 +15,10 @@ import reactLogo from 'assets/react.svg';
 
 function Home() {
 	const { t } = useTranslation();
-	const contextData = useBasicContext();
 
-	console.log('contextData:', contextData);
+	const { number, increaseNumber } = useBasicStore((state) => state);
+
+	console.log('number from zustand state:', number);
 
 	const UserSchema = Yup.object().shape({
 		firstName: Yup.string().required('Firstname is required!'),
@@ -49,12 +50,7 @@ function Home() {
 		<div className={clsx('flex items-center justify-center h-[600px] flex-col gap-12')}>
 			<h1>{t('title')}</h1>
 
-			<img
-				src={reactLogo}
-				className="logo react"
-				alt="React logo"
-				onClick={() => contextData.setData('isLoggedIn', !contextData.isLoggedIn)}
-			/>
+			<img src={reactLogo} className="logo react" alt="React logo" onClick={() => increaseNumber()} />
 
 			<span>
 				{t('today_is')} {dayjs().format('DD.MM.YYYY')}

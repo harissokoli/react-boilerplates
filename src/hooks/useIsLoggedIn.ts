@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { useBasicContext } from 'store/useBasicContext';
+import { useBasicStore } from 'store/useBasicContext';
 
 const useIsLoggedIn = () => {
 	const location = useLocation();
-	const { isLoggedIn: loggedIn } = useBasicContext();
+	const { isLoggedIn: loggedIn } = useBasicStore((state) => state);
 
 	const [isLoggedIn, setIsLoggedIn] = useState(loggedIn);
 
