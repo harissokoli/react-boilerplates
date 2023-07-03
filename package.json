@@ -1,0 +1,62 @@
+{
+	"name": "react-context-template",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"format": "prettier --list-different \"**/*.{js,jsx,ts,tsx,json,htm,html,yml,yaml}\"",
+		"format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,htm,html,yml,yaml}\"",
+		"task:prettier": "prettier \"./src/**/*.{ts,tsx}\" --check --loglevel error",
+		"task:prettier:fix": "prettier --write \"./src/**/*.{ts,tsx}\" --check --loglevel error",
+		"task:eslint": "eslint \"./src/**/*\" --ext .ts,.tsx --cache",
+		"task:eslint:fix": "eslint \"./src/**/*.tsx\" --fix --cache && eslint \"src/**/*.ts\" --fix --cache",
+		"task:typecheck": "tsc",
+		"formatx": "yarn run task:prettier:fix && yarn run task:eslint:fix && yarn run task:typecheck"
+	},
+	"dependencies": {
+		"@tanstack/react-query": "^4.29.19",
+		"@tanstack/react-query-devtools": "^4.29.19",
+		"axios": "^0.21.1",
+		"clsx": "^1.2.1",
+		"dayjs": "^1.11.7",
+		"formik": "^2.2.9",
+		"i18next": "^22.4.9",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-i18next": "^12.1.4",
+		"react-modal": "^3.16.1",
+		"react-router-dom": "^6.7.0",
+		"yup": "^0.32.11"
+	},
+	"devDependencies": {
+		"@trivago/prettier-plugin-sort-imports": "^4.1.1",
+		"@types/react": "^18.0.26",
+		"@types/react-dom": "^18.0.9",
+		"@vitejs/plugin-react": "^3.0.0",
+		"autoprefixer": "^10.4.13",
+		"eslint": "^8.37.0",
+		"eslint-config-react-app": "^7.0.1",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.0",
+		"postcss": "^8.4.21",
+		"postcss-import": "^15.1.0",
+		"postcss-nesting": "^11.0.0",
+		"prettier": "^2.8.3",
+		"tailwindcss": "^3.2.4",
+		"typescript": "^4.9.3",
+		"vite": "^4.0.0",
+		"vite-plugin-eslint": "^1.8.1",
+		"vite-tsconfig-paths": "^4.0.5"
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx}": [
+			"prettier --write",
+			"eslint \"src/**/*.tsx\"",
+			"eslint \"src/**/*.ts\""
+		],
+		"*.{htm,html,yml,yaml}": "prettier --write"
+	}
+}
